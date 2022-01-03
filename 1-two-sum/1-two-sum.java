@@ -6,9 +6,10 @@ class Solution {
         	if(hm.containsKey(target-nums[i])){
         		result[0]=hm.get(target-nums[i]);
         		result[1]=i;
-        	}else {
-        		hm.put(nums[i], i);
+        		return result;
         	}
+        		hm.put(nums[i], i);
+        	
         }
         return result;
     }
