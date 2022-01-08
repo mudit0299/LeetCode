@@ -17,14 +17,29 @@ class Solution {
 		
 // 	}
 // 	return 0;
-        int nums[]=new int[arr.length];
-	for(int i=0;i<arr.length;i++) {
-		if(nums[arr[i]]!=0) {
-			return arr[i];
-		}else {
-			nums[arr[i]]=1;
-		}
+	// int nums[]=new int[arr.length];
+	// for(int i=0;i<arr.length;i++) {
+	// 	if(nums[arr[i]]!=0) {
+	// 		return arr[i];
+	// 	}else {
+	// 		nums[arr[i]]=1;
+	// 	}
+	// }
+	// return 0;
+        
+        //CYCLE METHOD
+	int slow=arr[0];
+	int fast=arr[0];
+	do {
+		slow=arr[slow];
+		fast=arr[arr[fast]];
+	}while(slow!=fast);
+	
+	fast=arr[0];
+	while(slow!=fast) {
+		slow=arr[slow];
+		fast=arr[fast];
 	}
-	return 0;
+	return slow;
     }
 }
