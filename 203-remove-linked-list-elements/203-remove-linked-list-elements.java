@@ -10,13 +10,31 @@
  */
 class Solution {
     public ListNode removeElements(ListNode head, int val) {
-        if (head == null) return null;
-    ListNode pointer = head;
-    while (pointer.next != null) {
-        if (pointer.next.val == val) pointer.next = pointer.next.next;
-        else pointer = pointer.next;
-    }
-    return head.val == val ? head.next : head;
+    //     if (head == null) return null;
+    // ListNode pointer = head;
+    // while (pointer.next != null) {
+    //     if (pointer.next.val == val) pointer.next = pointer.next.next;
+    //     else pointer = pointer.next;
+    // }
+    // return head.val == val ? head.next : head;
+        if(head==null ){
+            return null;
+        }
+
+        ListNode temp=head;
+        while(temp.next!=null){
+            if(temp.next.val==val){
+                temp.next=temp.next.next;
+                
+            }else{
+                temp=temp.next;
+            }
+        }
+        if(head.val==val){
+            return head.next;
+        }
+        return head;
+        
             
         }
     
